@@ -3,9 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231</title>
+    <meta name="description" content="WDD231 Home Page">
+    <meta name="author" content="Nicole Makayi"
+    <title>WDD231 Home</title>
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/getdate.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
 </head>
 <body>
-    <h1>WDD231 - NICOLE</h1>
+<header>
+    <div class="logo">
+        <span>Nicole Makayi</span>
+    </div>
+    <button id="menuBtn">☰</button>
+    <nav id="navMenu">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Chamber Projects</a></li>
+        <li><a href="#">Final Projects</a></li>
+    </ul>
+    </nav>
+</header> 
+
+<main>
+    <h1>Home</h1>
+
+    <section>
+        <h2>About Me</h2>
+          <img src="images/profile.jpg" alt="Nicole Makayi" class="profile">
+        <p>My name is Nicole Makayi and i am studying software development</p>
+    </section>
+
+    <section>
+        <h2>Courses</h2>
+
+        <div class="buttons">
+            <button id="allBtn">All</button>
+            <button id="wddBtn">WDD</button>
+            <button id="cseBtn">CSE</button>
+        </div>
+
+        <div id="courseContainer"></div>
+
+        <p>Total Credits: <span id="totalCredits"></span></p>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <p>Your projects here.</p>
+    </section>
+</main>
+
+<footer>
+    <div class="social">
+        <a href="https://github.com/nicole-dev-tech">
+       <img src="images/github-logo.png" alt="GitHub">GitHub</a>
+
+        <a href="https://linkedin.com/in/Nicole Makayi">
+        <img src="images/linkedin-logo.png" alt="LinkedIn">LinkedIn</a>
+    </div>
+
+    <p>
+        © <span id="currentyear"></span> | Nicole Makayi | South Africa
+    </p>
+
+    <p id="lastModified"></p>
+</footer>
 </body>
 </html>
