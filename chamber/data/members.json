@@ -1,0 +1,67 @@
+{
+  "members": [
+    {
+      "name": "Cape Tech Solutions",
+      "address": "123 Main Rd, Cape Town, Western Cape, South Africa",
+      "phone": "+27 21 123 4567",
+      "email": "info@capetechsolutions.co.za",
+      "website": "https://www.capetechsolutions.co.za",
+      "image": "company1.jpg",
+      "membership": 3
+    },
+    {
+      "name": "Ocean Foods",
+      "address": "45 Beach Ave, Cape Town, Western Cape, South Africa",
+      "phone": "+27 21 987 6543",
+      "email": "contact@oceanfoods.co.za",
+      "website": "https://www.oceanfoods.co.za",
+      "image": "company2.jpg",
+      "membership": 2
+    },
+    {
+      "name": "Mountain Retail",
+      "address": "78 Hill St, Cape Town, Western Cape, South Africa",
+      "phone": "+27 21 555 1111",
+      "email": "sales@mountainretail.co.za",
+      "website": "https://www.mountainretail.co.za",
+      "image": "company3.jpg",
+      "membership": 1
+    },
+    {
+      "name": "Sunshine Bakery",
+      "address": "22 Market St, Cape Town, Western Cape, South Africa",
+      "phone": "+27 21 222 3333",
+      "email": "hello@sunshinebakery.co.za",
+      "website": "https://www.sunshinebakery.co.za",
+      "image": "company4.jpg",
+      "membership": 1
+    },
+    {
+      "name": "Green Energy SA",
+      "address": "10 Solar Rd, Cape Town, Western Cape, South Africa",
+      "phone": "+27 21 444 5555",
+      "email": "info@greenenergysa.co.za",
+      "website": "https://www.greenenergysa.co.za",
+      "image": "company5.jpg",
+      "membership": 3
+    },
+    {
+      "name": "City Logistics",
+      "address": "88 Transport Ave, Cape Town, Western Cape, South Africa",
+      "phone": "+27 21 666 7777",
+      "email": "support@citylogistics.co.za",
+      "website": "https://www.citylogistics.co.za",
+      "image": "company6.jpg",
+      "membership": 2
+    },
+    {
+      "name": "Digital Marketing Hub",
+      "address": "9 Tech Park, Cape Town, Western Cape, South Africa",
+      "phone": "+27 21 888 9999",
+      "email": "info@dmhub.co.za",
+      "website": "https://www.dmhub.co.za",
+      "image": "company7.jpg",
+      "membership": 2
+    }
+  ]
+}

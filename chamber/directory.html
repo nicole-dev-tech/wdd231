@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cape Town Chamber of Commerce</title>
+
+    <meta name="description" content="Cape Town Chamber of Commerce Directory Page">
+    <meta name="author" content="Nicole Makayi">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Cape Town Chamber of Commerce">
+    <meta property="og:description" content="Business directory and local networking hub">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://yourdomain.com/chamber/directory.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Cape Town Chamber of Commerce</h1>
+
+    <nav>
+        <button id="menuBtn">☰</button>
+
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="discover.html">Discover</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Business Directory</h2>
+
+    <div class="view-buttons">
+        <button id="gridBtn">Grid View</button>
+        <button id="listBtn">List View</button>
+    </div>
+
+    <section id="members" class="grid"></section>
+</main>
+
+<footer>
+    <p>Contact: info@capetowncc.org | +27 21 000 0000</p>
+
+    <p>
+        &copy; <span id="year"></span>
+        Cape Town Chamber of Commerce |
+        Nicole Makayi |
+        WDD 231
+    </p>
+
+    <p>Last Modified: <span id="lastModified"></span></p>
+</footer>
+
+</body>
+</html>
