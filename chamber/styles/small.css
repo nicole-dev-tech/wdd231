@@ -4,10 +4,6 @@
     Author: Nicole Makayi | WDD 231
     ============================================================ */
 
-/* ── Google Font import (fallback if preconnect already added) ── */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
-
-/* ── Custom Properties ──────────────────────────────────────── */
 :root {
   /* Cape Town palette: ocean teal + warm sand + rich navy */
   --clr-navy:      #0D2137;
@@ -69,9 +65,7 @@ ul    { list-style: none; }
 }
 .skip-link:focus { top: 1rem; }
 
-/* ══════════════════════════════════════════════════════════════
-   HEADER
-══════════════════════════════════════════════════════════════ */
+
 header {
   background: var(--clr-navy);
   color: var(--clr-white);
@@ -103,7 +97,7 @@ nav ul li a {
   font-weight: 700;
   letter-spacing: .05em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.75);
+  color: rgba(255, 255, 255, 0.989);
   border-radius: var(--radius-sm);
   border-bottom: 2px solid transparent;
   transition: color var(--transition), border-color var(--transition),
@@ -117,9 +111,7 @@ nav ul li a.active {
   background: rgba(255,255,255,.06);
 }
 
-/* ══════════════════════════════════════════════════════════════
-   HERO
-══════════════════════════════════════════════════════════════ */
+
 .hero {
   position: relative;
   overflow: hidden;

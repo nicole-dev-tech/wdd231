@@ -28,6 +28,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+
   <!-- JavaScript (defer so DOM is ready) -->
   <script src="scripts/getdates.js"  defer></script>
   <script src="scripts/weather.js"   defer></script>
@@ -37,12 +40,10 @@
 
 <body>
 
-  <!-- ── Skip link (accessibility) ─────────────────────────── -->
+  
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- ════════════════════════════════════════════════════════
-       HEADER
-  ════════════════════════════════════════════════════════ -->
+
   <header role="banner">
     <h1>Cape Town Chamber of Commerce</h1>
     <nav aria-label="Main navigation">
@@ -55,15 +56,12 @@
     </nav>
   </header>
 
-  <!-- ════════════════════════════════════════════════════════
-       MAIN
-  ════════════════════════════════════════════════════════ -->
   <main id="main-content">
 
     <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-heading">
       <img
-        src="images/hero.jpg"
+        src="images/hero.png"
         alt="Cape Town waterfront with Table Mountain in the background"
         width="1200"
         height="500"
@@ -79,7 +77,7 @@
     <!-- Home content grid wrapper -->
     <div class="home-main">
 
-      <!-- ── Current Events ──────────────────────────────── -->
+    
       <section class="events" aria-labelledby="events-heading">
         <h2 id="events-heading">Upcoming Events</h2>
         <ul role="list">
@@ -98,11 +96,10 @@
         </ul>
       </section>
 
-      <!-- ── Weather Section ────────────────────────────── -->
+      
       <section class="weather" aria-labelledby="weather-heading" aria-live="polite">
         <h2 id="weather-heading">Local Weather</h2>
         <div id="current-weather">
-          <!-- JS injects current temperature + description -->
           <p class="weather-meta">Loading current conditions…</p>
         </div>
         <div id="forecast">
@@ -122,9 +119,6 @@
 
   </main>
 
-  <!-- ════════════════════════════════════════════════════════
-       FOOTER
-  ════════════════════════════════════════════════════════ -->
   <footer role="contentinfo">
 
     <p>Contact: <a href="mailto:info@capetowncc.org">info@capetowncc.org</a> | <a href="tel:+27210000000">+27 21 000 0000</a></p>
