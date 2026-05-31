@@ -1,4 +1,4 @@
-/* join.js — timestamp injection + modal logic */
+/* join.js — timestamp injection + modal logic (no inline onclick attributes) */
 
 // ── Timestamp ────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,36 +8,47 @@ document.addEventListener('DOMContentLoaded', () => {
       dateStyle: 'medium', timeStyle: 'short'
     });
   }
-});
 
-// ── Modal helpers (called via inline onclick) ────────────────
-function openModal(id) {
-  const overlay = document.getElementById(id);
-  if (!overlay) return;
-  overlay.classList.add('open');
-  // Move focus into modal for accessibility
-  const closeBtn = overlay.querySelector('.modal-close');
-  if (closeBtn) closeBtn.focus();
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal(id) {
-  const overlay = document.getElementById(id);
-  if (!overlay) return;
-  overlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function closeOnOverlay(event, id) {
-  if (event.target === event.currentTarget) closeModal(id);
-}
-
-// Close any open modal on Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.modal-overlay.open').forEach(el => {
-      el.classList.remove('open');
+  // ── Modal: open via "Learn More" buttons on membership cards ──
+  document.querySelectorAll('.mem-card-link[data-modal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modalId = btn.getAttribute('data-modal');
+      const dialog = document.getElementById(modalId);
+      if (dialog) dialog.showModal();
     });
-    document.body.style.overflow = '';
-  }
+  });
+
+  // ── Modal: close via ✕ button ────────────────────────────────
+  document.querySelectorAll('.modal-close').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dialog = btn.closest('dialog');
+      if (dialog) dialog.close();
+    });
+  });
+
+  // ── Modal: select membership level via CTA button ────────────
+  document.querySelectorAll('.modal-cta[data-select]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const level  = btn.getAttribute('data-select');
+      const select = document.getElementById('membership-level');
+      if (select) select.value = level;
+      const dialog = btn.closest('dialog');
+      if (dialog) dialog.close();
+    });
+  });
+
+  // ── Modal: close on click outside (backdrop click) ───────────
+  document.querySelectorAll('dialog.mem-modal').forEach(dialog => {
+    dialog.addEventListener('click', (e) => {
+      // The dialog's padding area is the backdrop; clicking it closes the modal
+      const rect = dialog.getBoundingClientRect();
+      const inDialog = (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top  &&
+        e.clientY <= rect.bottom
+      );
+      if (!inDialog) dialog.close();
+    });
+  });
 });

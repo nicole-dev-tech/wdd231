@@ -9,26 +9,22 @@
   <meta name="description" content="Cape Town Chamber of Commerce — connecting businesses, fostering growth, and building community.">
   <meta name="author" content="Nicole Makayi">
 
-  <!-- Open Graph Meta Tags -->
   <meta property="og:title"       content="Cape Town Chamber of Commerce">
   <meta property="og:description" content="Business directory and local networking hub for Cape Town.">
-  <meta property="og:image"       content="images/logo.png">
+  <meta property="og:image"       content="https://nicolemakayi.github.io/wdd231/chamber/images/logo.png">
+  <meta property="og:url"         content="https://nicolemakayi.github.io/wdd231/chamber/index.html">
   <meta property="og:type"        content="website">
 
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" href="images/favicon.png">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <!-- JavaScript -->
   <script src="scripts/getdates.js"   defer></script>
   <script src="scripts/weather.js"    defer></script>
   <script src="scripts/spotlights.js" defer></script>
@@ -38,11 +34,10 @@
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header role="banner">
-    <h1>Cape Town Chamber of Commerce</h1>
+  <header>
     <nav aria-label="Main navigation">
-      <ul role="list">
-        <li><a href="index.html"     class="active" aria-current="page">Home</a></li>
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="discover.html">Discover</a></li>
         <li><a href="directory.html">Directory</a></li>
         <li><a href="join.html">Join</a></li>
@@ -51,6 +46,8 @@
   </header>
 
   <main id="main-content">
+
+    <h1>Cape Town Chamber of Commerce</h1>
 
     <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-heading">
@@ -73,7 +70,7 @@
 
       <section class="events" aria-labelledby="events-heading">
         <h2 id="events-heading">Upcoming Events</h2>
-        <ul role="list">
+        <ul>
           <li>
             <strong>Business Networking Breakfast</strong>
             – 5 June 2026
@@ -110,7 +107,7 @@
 
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <p>Contact: <a href="mailto:info@capetowncc.org">info@capetowncc.org</a> | <a href="tel:+27210000000">+27 21 000 0000</a></p>
     <p>
       &copy; <span id="year"></span>

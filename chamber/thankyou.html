@@ -6,36 +6,37 @@
 
   <title>Thank You | Cape Town Chamber of Commerce</title>
 
-  <meta name="description" content="Thank you for applying to join the Cape Town Chamber of Commerce.">
+  <meta name="description" content="Thank you for applying to join the Cape Town Chamber of Commerce. Your application has been received.">
   <meta name="author" content="Nicole Makayi">
+  <meta name="robots" content="noindex">
 
-  <meta property="og:title"       content="Thank You | Cape Town Chamber of Commerce">
-  <meta property="og:description" content="Your membership application has been received.">
-  <meta property="og:image"       content="images/logo.png">
+  <meta property="og:title"       content="Application Received — Cape Town Chamber">
+  <meta property="og:description" content="Thank you for applying to the Cape Town Chamber of Commerce.">
+  <meta property="og:image"       content="https://nicolemakayi.github.io/wdd231/chamber/images/logo.png">
+  <meta property="og:url"         content="https://nicolemakayi.github.io/wdd231/chamber/thankyou.html">
   <meta property="og:type"        content="website">
 
-  <link rel="icon" href="images/favicon.png">
+  <link rel="icon" href="images/favicon.ico">
 
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/join.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <script src="scripts/getdates.js"  defer></script>
-  <script src="scripts/thankyou.js" defer></script>
+  <script src="scripts/getdates.js"   defer></script>
+  <script src="scripts/thankyou.js"   defer></script>
 </head>
 
 <body>
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header role="banner">
-    <h1>Cape Town Chamber of Commerce</h1>
+  <header>
     <nav aria-label="Main navigation">
-      <ul role="list">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="discover.html">Discover</a></li>
         <li><a href="directory.html">Directory</a></li>
@@ -44,62 +45,106 @@
     </nav>
   </header>
 
-  <div class="page-banner">
-    <h2>Application Received</h2>
-    <p>We're thrilled to welcome you to Cape Town's business community.</p>
-  </div>
-
   <main id="main-content">
-    <div class="thankyou-wrap">
-      <div class="thankyou-card">
 
-        <span class="celebrate-icon" aria-hidden="true">🎉</span>
-        <h3>Thank You for Applying!</h3>
-        <p class="subtitle">Our team will review your application and be in touch shortly.</p>
+    <h1>Application Received</h1>
 
-        <div class="summary" aria-label="Your submitted application details">
-          <h4>Your Submission Details</h4>
+    <div class="thankyou-wrapper">
 
-          <div class="summary-row">
-            <span class="summary-label">First Name</span>
-            <span class="summary-value" id="out-first-name">—</span>
-          </div>
-          <div class="summary-row">
-            <span class="summary-label">Last Name</span>
-            <span class="summary-value" id="out-last-name">—</span>
-          </div>
-          <div class="summary-row">
-            <span class="summary-label">Email</span>
-            <span class="summary-value" id="out-email">—</span>
-          </div>
-          <div class="summary-row">
-            <span class="summary-label">Mobile</span>
-            <span class="summary-value" id="out-mobile">—</span>
-          </div>
-          <div class="summary-row">
-            <span class="summary-label">Organisation</span>
-            <span class="summary-value" id="out-org-name">—</span>
-          </div>
-          <div class="summary-row">
-            <span class="summary-label">Membership Level</span>
-            <span class="summary-value" id="out-membership">—</span>
-          </div>
-          <div class="summary-row">
-            <span class="summary-label">Date &amp; Time</span>
-            <span class="summary-value" id="out-timestamp">—</span>
-          </div>
-        </div>
-
-        <div class="cta-group">
-          <a href="index.html"     class="btn btn-primary">Return to Home</a>
-          <a href="directory.html" class="btn btn-outline">Browse Directory</a>
-        </div>
-
+      <!-- Success icon & headline -->
+      <div class="thankyou-hero" aria-label="Application received">
+        <div class="thankyou-checkmark" aria-hidden="true">✓</div>
+        <h2 class="thankyou-headline">Thank You!</h2>
+        <p class="thankyou-subhead">
+          Thank you for applying to join the Cape Town Chamber of Commerce.
+          A member of our team will be in touch within <strong>3 business days</strong>
+          to finalise your membership.
+        </p>
       </div>
-    </div>
+
+      <!-- Summary card -->
+      <section class="thankyou-summary" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Your Application Summary</h2>
+
+        <dl class="summary-list">
+
+          <div class="summary-row">
+            <dt>First Name</dt>
+            <dd id="out-first-name">—</dd>
+          </div>
+
+          <div class="summary-row">
+            <dt>Last Name</dt>
+            <dd id="out-last-name">—</dd>
+          </div>
+
+          <div class="summary-row">
+            <dt>Email Address</dt>
+            <dd id="out-email">—</dd>
+          </div>
+
+          <div class="summary-row">
+            <dt>Mobile Number</dt>
+            <dd id="out-mobile">—</dd>
+          </div>
+
+          <div class="summary-row">
+            <dt>Business / Organisation</dt>
+            <dd id="out-org-name">—</dd>
+          </div>
+
+          <div class="summary-row">
+            <dt>Membership Level</dt>
+            <dd id="out-membership">—</dd>
+          </div>
+
+          <div class="summary-row summary-row--timestamp">
+            <dt>Application Date &amp; Time</dt>
+            <dd id="out-timestamp">—</dd>
+          </div>
+
+        </dl>
+      </section>
+
+      <!-- Next steps -->
+      <section class="thankyou-next" aria-labelledby="next-heading">
+        <h2 id="next-heading">What Happens Next?</h2>
+        <ol class="next-steps">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <div>
+              <strong>Confirmation Email</strong>
+              <p>You will receive a confirmation email at the address you provided.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <div>
+              <strong>Application Review</strong>
+              <p>Our membership team reviews your application within 3 business days.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <div>
+              <strong>Welcome Aboard</strong>
+              <p>Once approved, you will receive your membership pack and access credentials.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- CTA links -->
+      <div class="thankyou-actions">
+        <a href="index.html"     class="cta-button">Return to Home</a>
+        <a href="directory.html" class="cta-button cta-button--outline">Browse Member Directory</a>
+      </div>
+
+    </div><!-- /.thankyou-wrapper -->
+
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <p>Contact: <a href="mailto:info@capetowncc.org">info@capetowncc.org</a> | <a href="tel:+27210000000">+27 21 000 0000</a></p>
     <p>
       &copy; <span id="year"></span>

@@ -41,14 +41,21 @@
     gap: 1.25rem;
   }
 
-  /* Card layout: image left, body right */
+  /* Card layout: image left, body right at tablet */
   .spotlight-card { flex-direction: row; }
 
   .spotlight-img-wrap {
     flex-shrink: 0;
     width: 130px;
+    /*
+     * BUG 5 FIX — was flex-start, which left images left-aligned.
+     * At tablet the image sits in a 130px-wide column left of the text;
+     * center looks better and matches the intent of the 1024px reset.
+     * align-items: center is explicitly set here so the 1024px block's
+     * override is consistent rather than corrective.
+     */
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
     padding: 1.25rem 1rem;
   }
 
@@ -60,25 +67,26 @@
   /* List view — show phone */
   .member-row .mem-phone { display: block; }
 
-  /* Join page — side by side */
-  .join-layout {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 2.5rem 2rem 4rem;
-  }
-
-  .form-card { flex: 1; }
-
-  .membership-section {
-    flex: 0 0 300px;
-    position: sticky;
-    top: 1.5rem;
-  }
-
-  /* Field row — side by side */
-  .field-row { flex-direction: row; }
-  .field-row label { flex: 1; }
+  /*
+   * BUG 4 FIX — join layout side-by-side was set here at 640px,
+   * conflicting with join.css which sets the same rule at 1024px.
+   * Because join.css loads after larger.css, its 1024px rule always
+   * wins — making the 640px rule here a no-op and producing confusing
+   * dead code. Join layout breakpoint lives exclusively in join.css at
+   * 1024px. No join-layout rule belongs in this 640px block.
+   *
+   * BUG 1 FIX — removed .form-card { flex: 1 }.
+   * The class does not exist; the correct selector is .form-section,
+   * already handled in join.css at 1024px.
+   *
+   * BUG 2 FIX — removed .membership-section rules.
+   * The class does not exist; the correct selector is .membership-cards,
+   * already handled in join.css at 1024px.
+   *
+   * BUG 3 FIX — removed .field-row rules.
+   * No .field-row element exists in join.html; the form uses CSS Grid
+   * in join.css to arrange fields side-by-side at 1024px.
+   */
 
 } /* end 640px */
 
@@ -106,27 +114,29 @@
   .spotlights { grid-column: 1 / 3; grid-row: 2; }
   .weather    { grid-column: 3;     grid-row: 1 / 3; align-self: start; }
 
-  /* Spotlights — 3-up */
+  /* Spotlights — 3-up grid */
   #spotlight-container {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Spotlight cards back to column layout in 3-up grid */
+  /*
+   * BUG 5 FIX (continued) — restoring column layout and centred image
+   * in the 3-up grid. Both properties are now explicit in both breakpoints
+   * so neither relies on cascade inheritance to get the right value.
+   */
   .spotlight-card { flex-direction: column; }
 
   .spotlight-img-wrap {
     width: 100%;
-    padding: 1.25rem;
     align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
   }
 
   /* Directory — 3 columns */
   .members-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  /* Join page — wider sidebar */
-  .membership-section { flex: 0 0 340px; }
 
   /* Footer — 3-column grid */
   footer {
