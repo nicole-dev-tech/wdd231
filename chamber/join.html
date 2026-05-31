@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Join | Cape Town Chamber of Commerce</title>
+
+  <meta name="description" content="Cape Town Chamber of Commerce — apply for membership today.">
+  <meta name="author" content="Nicole Makayi">
+
+  <meta property="og:title"       content="Join | Cape Town Chamber of Commerce">
+  <meta property="og:description" content="Apply for membership and connect with Cape Town's business community.">
+  <meta property="og:image"       content="images/logo.png">
+  <meta property="og:type"        content="website">
+
+  <link rel="icon" href="images/favicon.png">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/join.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <script src="scripts/getdates.js" defer></script>
+  <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner">
+    <h1>Cape Town Chamber of Commerce</h1>
+    <nav aria-label="Main navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html" class="active" aria-current="page">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-banner">
+    <h2>Become a Member</h2>
+    <p>Join Cape Town's most active business community and unlock exclusive benefits.</p>
+  </div>
+
+  <main id="main-content">
+    <div class="join-layout">
+
+      <div class="form-card">
+        <h3>Membership Application</h3>
+
+        <form method="get" action="thankyou.html">
+
+          <div class="field-row">
+            <label>
+              <span class="field-label">First Name <span class="req" aria-hidden="true">*</span></span>
+              <input
+                type="text"
+                name="first-name"
+                title="Enter your first name"
+                autocomplete="given-name"
+                placeholder="e.g. Amahle"
+                required
+                aria-required="true"
+              >
+            </label>
+            <label>
+              <span class="field-label">Last Name <span class="req" aria-hidden="true">*</span></span>
+              <input
+                type="text"
+                name="last-name"
+                title="Enter your last name"
+                autocomplete="family-name"
+                placeholder="e.g. Dlamini"
+                required
+                aria-required="true"
+              >
+            </label>
+          </div>
+
+          <label>
+            <span class="field-label">Title Within Organisation</span>
+            <input
+              type="text"
+              name="org-title"
+              title="Letters, hyphens and spaces only — minimum 7 characters"
+              autocomplete="organization-title"
+              pattern="[A-Za-z\- ]{7,}"
+              placeholder="e.g. Managing Director"
+            >
+          </label>
+
+          <label>
+            <span class="field-label">Email Address <span class="req" aria-hidden="true">*</span></span>
+            <input
+              type="email"
+              name="email"
+              title="Enter a valid email address"
+              autocomplete="email"
+              placeholder="you@organisation.co.za"
+              required
+              aria-required="true"
+            >
+          </label>
+
+          <label>
+            <span class="field-label">Mobile Phone <span class="req" aria-hidden="true">*</span></span>
+            <input
+              type="tel"
+              name="mobile"
+              title="Enter your mobile phone number"
+              autocomplete="tel"
+              placeholder="+27 82 000 0000"
+              required
+              aria-required="true"
+            >
+          </label>
+
+          <label>
+            <span class="field-label">Business / Organisation Name <span class="req" aria-hidden="true">*</span></span>
+            <input
+              type="text"
+              name="org-name"
+              title="Enter the full name of your business or organisation"
+              autocomplete="organization"
+              placeholder="e.g. Cape Town Designs Pty Ltd"
+              required
+              aria-required="true"
+            >
+          </label>
+
+          <label>
+            <span class="field-label">Membership Level <span class="req" aria-hidden="true">*</span></span>
+            <div class="select-wrap">
+              <select
+                name="membership-level"
+                title="Select your desired membership level"
+                required
+                aria-required="true"
+              >
+                <option value="" disabled selected>— Select a level —</option>
+                <option value="np">NP Membership (Non-Profit, no fee)</option>
+                <option value="bronze">Bronze Membership</option>
+                <option value="silver">Silver Membership</option>
+                <option value="gold">Gold Membership</option>
+              </select>
+            </div>
+          </label>
+
+          <label>
+            <span class="field-label">Business / Organisation Description</span>
+            <textarea
+              name="description"
+              title="Briefly describe your business or organisation"
+              rows="4"
+              placeholder="Tell us a little about what your organisation does…"
+            ></textarea>
+          </label>
+
+          <input type="hidden" name="timestamp" id="timestamp">
+
+          <input type="submit" value="Submit Application" class="submit-btn">
+
+        </form>
+      </div>
+
+      <aside class="membership-section" aria-label="Membership levels">
+        <h3>Membership Levels</h3>
+        <div class="cards-grid">
+
+          <div class="mem-card">
+            <span class="tier-icon">🌿</span>
+            <h4>NP Membership</h4>
+            <p class="price">No Fee</p>
+            <a href="#modal-np" class="info-link" onclick="openModal('modal-np'); return false;" aria-haspopup="dialog">Learn more</a>
+          </div>
+
+          <div class="mem-card">
+            <span class="tier-icon">🥉</span>
+            <h4>Bronze</h4>
+            <p class="price">From R 850 / yr</p>
+            <a href="#modal-bronze" class="info-link" onclick="openModal('modal-bronze'); return false;" aria-haspopup="dialog">Learn more</a>
+          </div>
+
+          <div class="mem-card">
+            <span class="tier-icon">🥈</span>
+            <h4>Silver</h4>
+            <p class="price">From R 1 800 / yr</p>
+            <a href="#modal-silver" class="info-link" onclick="openModal('modal-silver'); return false;" aria-haspopup="dialog">Learn more</a>
+          </div>
+
+          <div class="mem-card">
+            <span class="tier-icon">🥇</span>
+            <h4>Gold</h4>
+            <p class="price">From R 3 500 / yr</p>
+            <a href="#modal-gold" class="info-link" onclick="openModal('modal-gold'); return false;" aria-haspopup="dialog">Learn more</a>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="modal-np" role="dialog" aria-modal="true" aria-labelledby="np-title" onclick="closeOnOverlay(event,'modal-np')">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-np')" aria-label="Close NP Membership details">✕</button>
+      <h3 id="np-title">🌿 NP Membership</h3>
+      <p class="price-tag">No fee — for registered non-profit organisations</p>
+      <ul>
+        <li>Chamber directory listing</li>
+        <li>Monthly community newsletter</li>
+        <li>Access to networking events</li>
+        <li>Discounted workshop attendance</li>
+        <li>Certificate of membership</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-bronze" role="dialog" aria-modal="true" aria-labelledby="bronze-title" onclick="closeOnOverlay(event,'modal-bronze')">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-bronze')" aria-label="Close Bronze Membership details">✕</button>
+      <h3 id="bronze-title">🥉 Bronze Membership</h3>
+      <p class="price-tag">From R 850 per year</p>
+      <ul>
+        <li>All NP benefits included</li>
+        <li>Business profile on Chamber website</li>
+        <li>1 complimentary networking event ticket</li>
+        <li>Access to member-only resources library</li>
+        <li>10% discount on Chamber training</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-silver" role="dialog" aria-modal="true" aria-labelledby="silver-title" onclick="closeOnOverlay(event,'modal-silver')">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-silver')" aria-label="Close Silver Membership details">✕</button>
+      <h3 id="silver-title">🥈 Silver Membership</h3>
+      <p class="price-tag">From R 1 800 per year</p>
+      <ul>
+        <li>All Silver benefits included</li>
+        <li>Spotlight feature on Chamber homepage</li>
+        <li>3 complimentary event tickets per year</li>
+        <li>Priority listing in the directory</li>
+        <li>20% discount on Chamber advertising</li>
+        <li>Quarterly business advisory session</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-gold" role="dialog" aria-modal="true" aria-labelledby="gold-title" onclick="closeOnOverlay(event,'modal-gold')">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-gold')" aria-label="Close Gold Membership details">✕</button>
+      <h3 id="gold-title">🥇 Gold Membership</h3>
+      <p class="price-tag">From R 3 500 per year</p>
+      <ul>
+        <li>All Silver benefits included</li>
+        <li>Rotating hero banner on homepage</li>
+        <li>Unlimited event tickets for your team</li>
+        <li>Speaking opportunities at Chamber events</li>
+        <li>Dedicated account manager</li>
+        <li>Annual press-release distribution</li>
+        <li>VIP lounge access at Business Expo</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <p>Contact: <a href="mailto:info@capetowncc.org">info@capetowncc.org</a> | <a href="tel:+27210000000">+27 21 000 0000</a></p>
+    <p>
+      &copy; <span id="year"></span>
+      Cape Town Chamber of Commerce |
+      Nicole Makayi |
+      WDD 231
+    </p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+</body>
+</html>

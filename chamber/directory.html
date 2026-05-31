@@ -1,79 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cape Town Chamber of Commerce</title>
+  <title>Directory | Cape Town Chamber of Commerce</title>
 
-    <meta name="description" content="Cape Town Chamber of Commerce Directory Page">
-    <meta name="author" content="Nicole Makayi">
+  <meta name="description" content="Cape Town Chamber of Commerce — Business Directory.">
+  <meta name="author" content="Nicole Makayi">
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Cape Town Chamber of Commerce">
-    <meta property="og:description" content="Business directory and local networking hub">
-    <meta property="og:image" content="images/logo.png">
-    <meta property="og:url" content="https://yourdomain.com/chamber/directory.html">
+  <meta property="og:title"       content="Directory | Cape Town Chamber of Commerce">
+  <meta property="og:description" content="Business directory and local networking hub for Cape Town.">
+  <meta property="og:image"       content="images/logo.png">
+  <meta property="og:type"        content="website">
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" href="images/favicon.png">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/directory.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <!-- JavaScript -->
-    <script src="scripts/getdates.js" defer></script>
-    <script src="scripts/directory.js" defer></script>
+  <script src="scripts/getdates.js" defer></script>
+  <script src="scripts/directory.js" defer></script>
 </head>
 
 <body>
 
-<header>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner">
     <h1>Cape Town Chamber of Commerce</h1>
-
-    <nav>
-        <button id="menuBtn">☰</button>
-
-        <ul id="navMenu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="directory.html">Directory</a></li>
-            <li><a href="join.html">Join</a></li>
-            <li><a href="discover.html">Discover</a></li>
-        </ul>
+    <nav aria-label="Main navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html" class="active" aria-current="page">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<main>
-    <h2>Cape Town Business Directory</h2>
+  <div class="page-banner">
+    <h2>Business Directory</h2>
+    <p>Discover Cape Town's thriving member businesses and organisations.</p>
+  </div>
 
-    <div class="view-buttons">
-        <button id="gridBtn">Grid View</button>
-        <button id="listBtn">List View</button>
+  <main id="main-content">
+
+    <div class="directory-controls">
+      <h2>Member Businesses</h2>
+      <div class="view-toggle" role="group" aria-label="Toggle view">
+        <button id="gridBtn" class="active" aria-pressed="true" title="Grid view">⊞ Grid</button>
+        <button id="listBtn" aria-pressed="false" title="List view">☰ List</button>
+      </div>
     </div>
 
-    <section id="members" class="grid"></section>
-</main>
+    <div id="members-grid" role="list" aria-label="Member businesses grid view"></div>
 
-<footer>
-    <p>Contact: info@capetowncc.org | +27 21 000 0000</p>
+    <div id="members-list" role="list" aria-label="Member businesses list view"></div>
 
+  </main>
+
+  <footer role="contentinfo">
+    <p>Contact: <a href="mailto:info@capetowncc.org">info@capetowncc.org</a> | <a href="tel:+27210000000">+27 21 000 0000</a></p>
     <p>
-        &copy; <span id="year"></span>
-        Cape Town Chamber of Commerce |
-        Nicole Makayi |
-        WDD 231
+      &copy; <span id="year"></span>
+      Cape Town Chamber of Commerce |
+      Nicole Makayi |
+      WDD 231
     </p>
-
     <p>Last Modified: <span id="lastModified"></span></p>
-</footer>
+  </footer>
 
 </body>
 </html>

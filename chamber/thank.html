@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Thank You | Cape Town Chamber of Commerce</title>
+
+  <meta name="description" content="Thank you for applying to join the Cape Town Chamber of Commerce.">
+  <meta name="author" content="Nicole Makayi">
+
+  <meta property="og:title"       content="Thank You | Cape Town Chamber of Commerce">
+  <meta property="og:description" content="Your membership application has been received.">
+  <meta property="og:image"       content="images/logo.png">
+  <meta property="og:type"        content="website">
+
+  <link rel="icon" href="images/favicon.png">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/thankyou.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <script src="scripts/getdates.js" defer></script>
+  <script src="scripts/thankyou.js" defer></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner">
+    <h1>Cape Town Chamber of Commerce</h1>
+    <nav aria-label="Main navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-banner">
+    <h2>Application Received</h2>
+    <p>We're thrilled to welcome you to Cape Town's business community.</p>
+  </div>
+
+  <main id="main-content">
+    <div class="thankyou-wrap">
+      <div class="thankyou-card">
+
+        <span class="celebrate-icon" aria-hidden="true">🎉</span>
+        <h3>Thank You for Applying!</h3>
+        <p class="subtitle">Our team will review your application and be in touch shortly.</p>
+
+        <div class="summary" aria-label="Your submitted application details">
+          <h4>Your Submission Details</h4>
+
+          <div class="summary-row">
+            <span class="summary-label">First Name</span>
+            <span class="summary-value" id="out-first-name">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Last Name</span>
+            <span class="summary-value" id="out-last-name">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Email</span>
+            <span class="summary-value" id="out-email">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Mobile</span>
+            <span class="summary-value" id="out-mobile">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Organisation</span>
+            <span class="summary-value" id="out-org-name">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Date &amp; Time</span>
+            <span class="summary-value" id="out-timestamp">—</span>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <a href="index.html" class="btn btn-primary">Return to Home</a>
+          <a href="directory.html" class="btn btn-outline">Browse Directory</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>Contact: <a href="mailto:info@capetowncc.org">info@capetowncc.org</a> | <a href="tel:+27210000000">+27 21 000 0000</a></p>
+    <p>
+      &copy; <span id="year"></span>
+      Cape Town Chamber of Commerce |
+      Nicole Makayi |
+      WDD 231
+    </p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+</body>
+</html>
