@@ -1,31 +1,27 @@
-/*  ============================================================
-    thankyou.js — Confirmation page logic
-    Cape Town Chamber of Commerce
-    Author: Nicole Makayi | WDD 231
-    ============================================================ */
+/* thankyou.js — reads GET params from form submission and displays them */
 
-// Read GET params passed from the join form and populate the summary
-var params = new URLSearchParams(window.location.search);
-
-var fieldMap = {
-  'first-name': 'out-first-name',
-  'last-name':  'out-last-name',
-  'email':      'out-email',
-  'mobile':     'out-mobile',
-  'org-name':   'out-org-name',
-  'timestamp':  'out-timestamp'
+const LEVEL_LABELS = {
+  np:     'NP Membership (Non-Profit)',
+  bronze: 'Bronze Membership',
+  silver: 'Silver Membership',
+  gold:   'Gold Membership'
 };
 
-Object.keys(fieldMap).forEach(function(param) {
-  var val = params.get(param);
-  var el  = document.getElementById(fieldMap[param]);
-  if (el && val) {
-    el.textContent = decodeURIComponent(val.replace(/\+/g, ' '));
-  }
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
 
-// ── Footer ───────────────────────────────────────────────────
-var yearEl = document.getElementById('year');
-var modEl  = document.getElementById('lastModified');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-if (modEl)  modEl.textContent  = document.lastModified;
+  function fill(id, key, transform) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const val = params.get(key);
+    el.textContent = val ? (transform ? transform(val) : val) : '—';
+  }
+
+  fill('out-first-name',  'first-name');
+  fill('out-last-name',   'last-name');
+  fill('out-email',       'email');
+  fill('out-mobile',      'mobile');
+  fill('out-org-name',    'org-name');
+  fill('out-membership',  'membership-level', v => LEVEL_LABELS[v] ?? v);
+  fill('out-timestamp',   'timestamp');
+});

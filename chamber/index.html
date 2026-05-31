@@ -16,32 +16,27 @@
   <meta property="og:type"        content="website">
 
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.png">
+  <link rel="icon" href="images/favicon.ico">
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
 
-  <!-- Google Fonts (preconnect already in small.css import; kept here for speed) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
-
-  <!-- JavaScript (defer so DOM is ready) -->
-  <script src="scripts/getdates.js"  defer></script>
-  <script src="scripts/weather.js"   defer></script>
+  <!-- JavaScript -->
+  <script src="scripts/getdates.js"   defer></script>
+  <script src="scripts/weather.js"    defer></script>
   <script src="scripts/spotlights.js" defer></script>
-  <script src="scripts/directory.js" defer></script>
 </head>
 
 <body>
 
-  
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
 
   <header role="banner">
     <h1>Cape Town Chamber of Commerce</h1>
@@ -76,7 +71,6 @@
     <!-- Home content grid wrapper -->
     <div class="home-main">
 
-    
       <section class="events" aria-labelledby="events-heading">
         <h2 id="events-heading">Upcoming Events</h2>
         <ul role="list">
@@ -95,7 +89,6 @@
         </ul>
       </section>
 
-      
       <section class="weather" aria-labelledby="weather-heading" aria-live="polite">
         <h2 id="weather-heading">Local Weather</h2>
         <div id="current-weather">
@@ -106,7 +99,6 @@
         </div>
       </section>
 
-      <!-- ── Member Spotlights ──────────────────────────── -->
       <section class="spotlights" aria-labelledby="spotlights-heading">
         <h2 id="spotlights-heading">Member Spotlights</h2>
         <div id="spotlight-container" aria-live="polite">
@@ -119,18 +111,14 @@
   </main>
 
   <footer role="contentinfo">
-
     <p>Contact: <a href="mailto:info@capetowncc.org">info@capetowncc.org</a> | <a href="tel:+27210000000">+27 21 000 0000</a></p>
-
     <p>
       &copy; <span id="year"></span>
       Cape Town Chamber of Commerce |
       Nicole Makayi |
       WDD 231
     </p>
-
     <p>Last Modified: <span id="lastModified"></span></p>
-
   </footer>
 
 </body>

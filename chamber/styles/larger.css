@@ -20,25 +20,18 @@
   /* Hero — taller */
   .hero { min-height: 420px; }
 
-  /* ── Home page layout — 2-column grid ── */
+  /* Home page — 2-column grid */
   .home-main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
     gap: 1.5rem;
     max-width: 1200px;
     margin: 1.5rem auto;
     padding: 0 1.5rem 3rem;
   }
 
-  /* Hero spans full width */
-  .hero { grid-column: 1 / -1; }
-
-  /* Events takes left, weather takes right */
-  .events  { margin: 0; grid-column: 1; }
-  .weather { margin: 0; grid-column: 2; }
-
-  /* Spotlights spans full width */
+  .events     { margin: 0; grid-column: 1; }
+  .weather    { margin: 0; grid-column: 2; }
   .spotlights { margin: 0; grid-column: 1 / -1; }
 
   /* Spotlight cards: 2-up grid */
@@ -49,9 +42,7 @@
   }
 
   /* Card layout: image left, body right */
-  .spotlight-card {
-    flex-direction: row;
-  }
+  .spotlight-card { flex-direction: row; }
 
   .spotlight-img-wrap {
     flex-shrink: 0;
@@ -61,13 +52,33 @@
     padding: 1.25rem 1rem;
   }
 
-  /* Directory grid — 2 columns */
+  /* Directory — 2 columns */
   .members-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   /* List view — show phone */
   .member-row .mem-phone { display: block; }
+
+  /* Join page — side by side */
+  .join-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  .form-card { flex: 1; }
+
+  .membership-section {
+    flex: 0 0 300px;
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  /* Field row — side by side */
+  .field-row { flex-direction: row; }
+  .field-row label { flex: 1; }
 
 } /* end 640px */
 
@@ -79,22 +90,21 @@
 
   /* Header */
   header { padding: 1.1rem 3rem; }
-
   nav ul { gap: .35rem; }
   nav ul li a { font-size: .9rem; padding: .5rem 1.1rem; }
 
-  /* Hero — full cinematic */
+  /* Hero */
   .hero { min-height: 500px; }
   .hero-text { padding: 3rem; max-width: 700px; }
 
-  /* ── Home page — 3-column layout ── */
+  /* Home page — 3-column layout */
   .home-main {
-    grid-template-columns: 1fr 1fr 320px; /* events | spotlights | weather sidebar */
+    grid-template-columns: 1fr 1fr 320px;
   }
 
-  .events     { grid-column: 1; grid-row: 1; }
+  .events     { grid-column: 1;     grid-row: 1; }
   .spotlights { grid-column: 1 / 3; grid-row: 2; }
-  .weather    { grid-column: 3; grid-row: 1 / 3; align-self: start; }
+  .weather    { grid-column: 3;     grid-row: 1 / 3; align-self: start; }
 
   /* Spotlights — 3-up */
   #spotlight-container {
@@ -102,9 +112,7 @@
   }
 
   /* Spotlight cards back to column layout in 3-up grid */
-  .spotlight-card {
-    flex-direction: column;
-  }
+  .spotlight-card { flex-direction: column; }
 
   .spotlight-img-wrap {
     width: 100%;
@@ -112,12 +120,15 @@
     align-items: center;
   }
 
-  /* Directory — 3 or 4 columns */
+  /* Directory — 3 columns */
   .members-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Footer */
+  /* Join page — wider sidebar */
+  .membership-section { flex: 0 0 340px; }
+
+  /* Footer — 3-column grid */
   footer {
     display: grid;
     grid-template-columns: 1fr auto 1fr;

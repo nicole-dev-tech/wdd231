@@ -19,14 +19,13 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
-  <link rel="stylesheet" href="styles/join.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
   <script src="scripts/getdates.js" defer></script>
-  <script src="scripts/join.js" defer></script>
+  <script src="scripts/join.js"     defer></script>
 </head>
 
 <body>
@@ -53,6 +52,7 @@
   <main id="main-content">
     <div class="join-layout">
 
+      <!-- Application Form -->
       <div class="form-card">
         <h3>Membership Application</h3>
 
@@ -171,6 +171,7 @@
         </form>
       </div>
 
+      <!-- Membership Levels Sidebar -->
       <aside class="membership-section" aria-label="Membership levels">
         <h3>Membership Levels</h3>
         <div class="cards-grid">
@@ -209,6 +210,7 @@
     </div>
   </main>
 
+  <!-- Modals -->
   <div class="modal-overlay" id="modal-np" role="dialog" aria-modal="true" aria-labelledby="np-title" onclick="closeOnOverlay(event,'modal-np')">
     <div class="modal">
       <button class="modal-close" onclick="closeModal('modal-np')" aria-label="Close NP Membership details">✕</button>

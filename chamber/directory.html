@@ -19,13 +19,12 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
-  <link rel="stylesheet" href="styles/directory.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <script src="scripts/getdates.js" defer></script>
+  <script src="scripts/getdates.js"  defer></script>
   <script src="scripts/directory.js" defer></script>
 </head>
 
@@ -55,14 +54,13 @@
     <div class="directory-controls">
       <h2>Member Businesses</h2>
       <div class="view-toggle" role="group" aria-label="Toggle view">
-        <button id="gridBtn" class="active" aria-pressed="true" title="Grid view">⊞ Grid</button>
-        <button id="listBtn" aria-pressed="false" title="List view">☰ List</button>
+        <button id="gridBtn" class="active" aria-pressed="true"  title="Grid view">⊞ Grid</button>
+        <button id="listBtn"                aria-pressed="false" title="List view">☰ List</button>
       </div>
     </div>
 
-    <div id="members-grid" role="list" aria-label="Member businesses grid view"></div>
-
-    <div id="members-list" role="list" aria-label="Member businesses list view"></div>
+    <div id="members-grid" class="members-grid" role="list" aria-label="Member businesses grid view"></div>
+    <div id="members-list" class="members-list" role="list" aria-label="Member businesses list view" style="display:none;"></div>
 
   </main>
 
