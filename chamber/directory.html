@@ -3,36 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Directory | Cape Town Chamber of Commerce</title>
-
   <meta name="description" content="Cape Town Chamber of Commerce — Business Directory.">
   <meta name="author" content="Nicole Makayi">
-
   <meta property="og:title"       content="Directory | Cape Town Chamber of Commerce">
   <meta property="og:description" content="Business directory and local networking hub for Cape Town.">
-  <meta property="og:image"       content="https://nicolemakayi.github.io/wdd231/chamber/images/logo.png">
-  <meta property="og:url"         content="https://nicolemakayi.github.io/wdd231/chamber/directory.html">
+  <meta property="og:image"       content="https://nicole-dev-tech.github.io/wdd231/chamber/images/logo.png">
+  <meta property="og:url"         content="https://nicole-dev-tech.github.io/wdd231/chamber/directory.html">
   <meta property="og:type"        content="website">
-
   <link rel="icon" href="images/favicon.png">
-
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
   <script src="scripts/getdates.js"  defer></script>
   <script src="scripts/directory.js" defer></script>
 </head>
-
 <body>
-
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
   <header>
     <nav aria-label="Main navigation">
       <ul>
@@ -43,15 +33,11 @@
       </ul>
     </nav>
   </header>
-
   <main id="main-content">
-
     <h1>Business Directory</h1>
-
     <div class="page-banner">
       <p>Discover Cape Town's thriving member businesses and organisations.</p>
     </div>
-
     <div class="directory-controls">
       <h2>Member Businesses</h2>
       <div class="view-toggle" role="group" aria-label="Toggle view">
@@ -59,12 +45,9 @@
         <button id="listBtn"                aria-pressed="false" title="List view">☰ List</button>
       </div>
     </div>
-
     <div id="members-grid" class="members-grid" role="list" aria-label="Member businesses grid view"></div>
-    <div id="members-list" class="members-list" role="list" aria-label="Member businesses list view" style="display:none;"></div>
-
+    <div id="members-list" class="members-list hidden" role="list" aria-label="Member businesses list view"></div>
   </main>
-
   <footer>
     <p>Contact: <a href="mailto:info@capetowncc.org">info@capetowncc.org</a> | <a href="tel:+27210000000">+27 21 000 0000</a></p>
     <p>
@@ -75,6 +58,5 @@
     </p>
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
-
 </body>
 </html>
