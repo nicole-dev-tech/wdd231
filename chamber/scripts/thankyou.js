@@ -1,27 +1,37 @@
-/* thankyou.js — reads GET params from form submission and displays them */
+// scripts/thankyou.js — Populates thank-you summary from URL search params
 
-const LEVEL_LABELS = {
-  np:     'NP Membership (Non-Profit)',
-  bronze: 'Bronze Membership',
-  silver: 'Silver Membership',
-  gold:   'Gold Membership'
+const MEMBERSHIP_LABELS = {
+  np:     'NP Membership (Non-Profit — No Fee)',
+  bronze: 'Bronze Membership — R 1 500 / year',
+  silver: 'Silver Membership — R 3 500 / year',
+  gold:   'Gold Membership — R 6 500 / year',
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+function setField(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value || '—';
+}
+
+function formatTimestamp(iso) {
+  if (!iso) return '—';
+  try {
+    return new Date(iso).toLocaleString('en-ZA', {
+      dateStyle: 'long',
+      timeStyle: 'short',
+    });
+  } catch {
+    return iso;
+  }
+}
+
+(function populateSummary() {
   const params = new URLSearchParams(window.location.search);
 
-  function fill(id, key, transform) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const val = params.get(key);
-    el.textContent = val ? (transform ? transform(val) : val) : '—';
-  }
-
-  fill('out-first-name',  'first-name');
-  fill('out-last-name',   'last-name');
-  fill('out-email',       'email');
-  fill('out-mobile',      'mobile');
-  fill('out-org-name',    'org-name');
-  fill('out-membership',  'membership-level', v => LEVEL_LABELS[v] ?? v);
-  fill('out-timestamp',   'timestamp');
-});
+  setField('out-first-name',  params.get('first-name'));
+  setField('out-last-name',   params.get('last-name'));
+  setField('out-email',       params.get('email'));
+  setField('out-mobile',      params.get('mobile'));
+  setField('out-org-name',    params.get('org-name'));
+  setField('out-membership',  MEMBERSHIP_LABELS[params.get('membership-level')] || params.get('membership-level'));
+  setField('out-timestamp',   formatTimestamp(params.get('timestamp')));
+})();

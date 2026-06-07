@@ -1,53 +1,57 @@
-/* spotlights.js — picks 2–3 Gold/Silver members randomly for the homepage */
+// scripts/spotlights.js — Renders 2-3 random Gold/Silver member spotlight cards
+
+const MEMBERSHIP_LABELS = { 1: 'Bronze', 2: 'Silver', 3: 'Gold' };
 
 function shuffle(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
-function buildSpotlightCard(member) {
-  const isGold   = member.membership === 3;
-  const badge    = isGold ? 'Gold' : 'Silver';
-  const badgeCls = isGold ? 'badge-gold' : 'badge-silver';
-
-  const fallback = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23e8eef2'/%3E%3Ctext x='50%25' y='54%25' font-size='36' text-anchor='middle' dominant-baseline='middle' fill='%238FA3B1'%3E%F0%9F%8F%A2%3C/text%3E%3C/svg%3E`;
+function buildCard(member) {
+  const level  = MEMBERSHIP_LABELS[member.membership] || 'Member';
+  const badge  = member.membership === 3 ? 'badge-gold' : 'badge-silver';
+  const imgSrc = `images/${member.image}`;
 
   return `
-    <article class="spotlight-card">
+    <article class="spotlight-card" role="listitem">
       <div class="spotlight-img-wrap">
-        <img src="images/${member.image}" alt="${member.name} logo"
-          onerror="this.src='${fallback}'" loading="lazy" width="100" height="100">
+        <img
+          src="${imgSrc}"
+          alt="${member.name} logo"
+          width="100" height="100"
+          loading="lazy"
+          onerror="this.src='images/placeholder.png'"
+        >
       </div>
       <div class="spotlight-body">
-        <span class="spotlight-badge ${badgeCls}">${badge} Member</span>
+        <span class="spotlight-badge ${badge}">${level} Member</span>
         <h3 class="spotlight-name">${member.name}</h3>
-        <p class="spotlight-description">${member.address}</p>
         <ul class="spotlight-details">
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5
-                       19.79 19.79 0 0 1 1.61 4.87 2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72
-                       12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91
-                       a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45
-                       12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
             </svg>
-            <span>${member.phone}</span>
+            ${member.address}
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.8 19.8 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
             </svg>
-            <a href="mailto:${member.email}">${member.email}</a>
+            <a href="tel:${member.phone.replace(/\s/g,'')}">${member.phone}</a>
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
             </svg>
-            <a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.website.replace('https://www.','')}</a>
+            <a href="${member.website}" target="_blank" rel="noopener noreferrer">
+              ${member.website.replace(/^https?:\/\//, '')}
+            </a>
           </li>
         </ul>
       </div>
@@ -59,28 +63,20 @@ async function loadSpotlights() {
   if (!container) return;
 
   try {
-    const res = await fetch('data/members.json');
+    const res  = await fetch('data/members.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    const { members } = await res.json();
 
-    // Support both array format and { members: [...] } format
-    const members = Array.isArray(data) ? data : data.members;
-
-    // Filter Gold (3) and Silver (2) members
+    // Filter Gold (3) and Silver (2), then pick 2-3 at random
     const eligible = members.filter(m => m.membership >= 2);
-    const selected = shuffle(eligible).slice(0, 3);
+    const count    = Math.min(3, Math.max(2, eligible.length));
+    const picked   = shuffle(eligible).slice(0, count);
 
-    if (selected.length === 0) {
-      container.innerHTML = '<p class="spotlights-error">No spotlights available at this time.</p>';
-      return;
-    }
-
-    container.innerHTML = selected.map(buildSpotlightCard).join('');
-
+    container.innerHTML = picked.map(buildCard).join('');
   } catch (err) {
     console.error('Spotlights load failed:', err);
-    container.innerHTML = '<p class="spotlights-error">Unable to load spotlights at this time.</p>';
+    container.innerHTML = '<p class="spotlights-error">Member spotlights temporarily unavailable.</p>';
   }
 }
 
-document.addEventListener('DOMContentLoaded', loadSpotlights);
+loadSpotlights();

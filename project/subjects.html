@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subjects | Connect&amp;Learn Hub</title>
+  <meta name="description" content="Explore all tutoring subjects offered by Connect&amp;Learn Hub for Grades 8–12, including Maths, Science, English, Accounting, History and more.">
+  <meta name="author" content="Nicole Makayi">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://yourdomain.co.za/final/subjects.html">
+  <meta property="og:title"       content="Subjects | Connect&amp;Learn Hub">
+  <meta property="og:description" content="Browse all subjects available for online tutoring — Grades 8 to 12.">
+  <meta property="og:image"       content="images/og-cover.webp">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/connect.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Connect&amp;Learn Hub home">
+        <span class="logo-icon" aria-hidden="true">✦</span>
+        <span>Connect<em>&amp;</em>Learn</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="subjects.html" class="nav-link active" aria-current="page">Subjects</a></li>
+          <li><a href="enroll.html" class="nav-link">Enrol</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero" aria-label="Subjects page hero">
+      <div class="section-inner">
+        <span class="eyebrow">What we teach</span>
+        <h1>All Subjects</h1>
+        <p class="hero-sub">We offer tutoring in <strong id="subjectCount">15</strong> subjects across Grades 8–12.</p>
+      </div>
+    </section>
+
+    <section class="subjects-full" aria-labelledby="subjects-full-heading">
+      <div class="section-inner">
+        <h2 id="subjects-full-heading" class="sr-only">Full subject list</h2>
+
+        <!-- Search + filter -->
+        <div class="toolbar">
+          <label for="searchInput" class="sr-only">Search subjects</label>
+          <input type="search" id="searchInput" class="search-input" placeholder="Search subjects…" aria-label="Search subjects">
+          <div class="filter-bar" role="group" aria-label="Filter by grade">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="8">Gr 8</button>
+            <button class="filter-btn" data-filter="9">Gr 9</button>
+            <button class="filter-btn" data-filter="10">Gr 10</button>
+            <button class="filter-btn" data-filter="11">Gr 11</button>
+            <button class="filter-btn" data-filter="12">Gr 12</button>
+          </div>
+        </div>
+
+        <div class="cards" id="subjectList" aria-live="polite">
+          <!-- Dynamically injected by main.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon" aria-hidden="true">✦</span>
+        <span class="footer-name">Connect<em>&amp;</em>Learn Hub</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="enroll.html">Enrol</a>
+        <a href="references.html">Attributions</a>
+        <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener">▶ Demo Video</a>
+      </nav>
+      <p class="footer-copy">&copy; <span id="currentyear"></span> Connect&amp;Learn Hub &nbsp;·&nbsp; Nicole Makayi</p>
+      <p class="footer-modified" id="lastModified"></p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="subjectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script type="module" src="scripts/main.js"></script>
+  <script src="scripts/getdates.js" defer></script>
+</body>
+</html>

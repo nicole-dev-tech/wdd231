@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect&amp;Learn Hub | Online Tutoring for Grades 8–12</title>
+  <meta name="description" content="Connect&amp;Learn Hub offers professional online tutoring for Grades 8–12 in Mathematics, Science, English and more. Find a qualified tutor and enrol today.">
+  <meta name="author" content="Nicole Makayi">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://yourdomain.co.za/final/">
+  <meta property="og:title"       content="Connect&amp;Learn Hub | Online Tutoring">
+  <meta property="og:description" content="Professional online tutoring for Grades 8–12. Connect with qualified tutors in Maths, Science, English and more.">
+  <meta property="og:image"       content="images/og-cover.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/connect.css">
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Connect&amp;Learn Hub home">
+        <span class="logo-icon" aria-hidden="true">✦</span>
+        <span>Connect<em>&amp;</em>Learn</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+          <li><a href="subjects.html" class="nav-link">Subjects</a></li>
+          <li><a href="enroll.html" class="nav-link">Enrol</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero" aria-label="Hero section">
+      <div class="hero-content">
+        <span class="eyebrow">Grades 8 – 12 &nbsp;·&nbsp; Online &amp; In-Person</span>
+        <h1>Academic success <em>starts here.</em></h1>
+        <p class="hero-sub">Connect with qualified tutors in Maths, Science, English and more. Flexible sessions built around your schedule.</p>
+        <div class="hero-cta">
+          <a href="enroll.html" class="btn btn-primary">Enrol Now</a>
+          <a href="subjects.html" class="btn btn-outline">Browse Subjects</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card hero-card--1">
+          <span class="card-icon">📐</span>
+          <span>Mathematics</span>
+        </div>
+        <div class="hero-card hero-card--2">
+          <span class="card-icon">🔬</span>
+          <span>Science</span>
+        </div>
+        <div class="hero-card hero-card--3">
+          <span class="card-icon">📖</span>
+          <span>English</span>
+        </div>
+        <div class="hero-blob" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ── WHY US ── -->
+    <section class="why-section" aria-labelledby="why-heading">
+      <div class="section-inner">
+        <h2 id="why-heading" class="section-title">Why Connect<em>&amp;</em>Learn?</h2>
+        <p class="section-sub">We make it easy to find the right support at the right time.</p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">🎯</div>
+            <h3>Personalised Learning</h3>
+            <p>Sessions tailored to each student's pace, goals, and learning style.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">📅</div>
+            <h3>Flexible Scheduling</h3>
+            <p>Book sessions that fit your timetable — evenings, weekends, anytime.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">🏆</div>
+            <h3>Qualified Tutors</h3>
+            <p>All tutors are degree-qualified and experienced in the SA curriculum.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">💻</div>
+            <h3>Online &amp; In-Person</h3>
+            <p>Choose video call sessions or face-to-face meetings in Cape Town.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SUBJECTS PREVIEW (JS renders 15 cards here) ── -->
+    <section class="subjects-preview" aria-labelledby="subjects-heading">
+      <div class="section-inner">
+        <div class="section-header-row">
+          <div>
+            <h2 id="subjects-heading" class="section-title">Our Subjects</h2>
+            <p class="section-sub">Browse all <span id="subjectCount">15</span> subjects we offer.</p>
+          </div>
+          <a href="subjects.html" class="btn btn-outline btn-sm">View All</a>
+        </div>
+
+        <!-- Filter buttons -->
+        <div class="filter-bar" role="group" aria-label="Filter subjects by grade">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="8">Grade 8</button>
+          <button class="filter-btn" data-filter="9">Grade 9</button>
+          <button class="filter-btn" data-filter="10">Grade 10</button>
+          <button class="filter-btn" data-filter="11">Grade 11</button>
+          <button class="filter-btn" data-filter="12">Grade 12</button>
+        </div>
+
+        <div class="cards" id="subjectList" aria-live="polite">
+          <!-- Dynamically injected by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ENROL CTA BAND ── -->
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="section-inner cta-inner">
+        <div>
+          <h2 id="cta-heading">Ready to get started?</h2>
+          <p>Fill in a quick form and we'll match you with the right tutor.</p>
+        </div>
+        <a href="enroll.html" class="btn btn-primary btn-lg">Enrol Today →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon" aria-hidden="true">✦</span>
+        <span class="footer-name">Connect<em>&amp;</em>Learn Hub</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="enroll.html">Enrol</a>
+        <a href="references.html">Attributions</a>
+        <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener">▶ Demo Video</a>
+      </nav>
+      <p class="footer-copy">&copy; <span id="currentyear"></span> Connect&amp;Learn Hub &nbsp;·&nbsp; Nicole Makayi</p>
+      <p class="footer-modified" id="lastModified"></p>
+    </div>
+  </footer>
+
+  <!-- ── MODAL (Subject detail) ── -->
+  <div id="subjectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <div id="modalContent"><!-- filled by JS --></div>
+    </div>
+  </div>
+
+  <script type="module" src="scripts/main.js"></script>
+  <script src="scripts/getdates.js" defer></script>
+</body>
+</html>
